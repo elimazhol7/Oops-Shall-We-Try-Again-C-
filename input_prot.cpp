@@ -4,12 +4,21 @@ using namespace std;
 
 int getInput(const char* prompt, const char* error, int min, int max) {
     int value;
-    cout << prompt;
-    cin >> value;
 
-    while (value < min || value > max) {
-        cout << error;
-        cin >> value;
+    while (true) {
+        cout << prompt;
+
+        if (cin >> value) {
+            if (value >= min && value <= max) {
+                return value;
+            } else {
+                cout << error << endl;  // out of range
+            }
+        } else {  // input failed (not an int)
+            cout << error << endl;
+            cin.clear();  // clear the fail state
+        }
+
+        cin.ignore(1000, '\n');
     }
-    return value;
 }

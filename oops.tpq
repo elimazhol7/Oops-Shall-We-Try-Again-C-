@@ -1,0 +1,14 @@
+1. I can pass prompt or error to a function using a string argument (the C-string) like any other parameters. The function will print it out when needed.
+2. I can pass the string to a function using const char*. Because the functions purpose is to display the text, the string can't be changed.
+3. I don’t use a list in my program, I only use a range check with min and max. But if I needed a list, I would pass it as a const array and its size.
+4. Other arguments are: prompt message, the error message, bounds(min/max). They are not supposed to be modified inside the function, shuld be passed as const.
+5. My function getInput returns an int. The value it returns is the user’s validated integer input. This number is guaranteed to be within the specified range (min to max), because the function does not exit the loop until a valid integer is entered.
+6. The caller can immediately assume that the returned value is valid, since the function enforces input validation before returning. The only care the caller must take is to store the result in an integer variable.
+7. Right now, there is only one version of getInput, so the compiler always uses that. However, if overloaded functions were added (double, char), the compliler would distinguish them based on the argument types in the function signature.
+8. I used the library guard #pragma once, because it ensures that the header file is used only once in a single translation unit.
+9. In my main application I used #include "input_prot.h" to be able to work with the library. And for compiling I typed g++ driver.cpp input_prot.cpp -o oops_program in my terminal.
+10. My library consists of 3 files: driver.cpp, input_prot.h, input_prot.cpp
+
+
+1. It’s better as a separate overload or with an extra allowAbort flag, so the original function keeps its guarantee of always returning a valid number.
+2. Returning “invalid” numbers (like min-1) is risky. A cleaner way is to return a bool for abort and pass the actual number back by reference. 
