@@ -23,8 +23,8 @@ Enter number (0-100): 25
 Number entered: 25
 
 
-to compile everything, I used:
+*to compile everything:*
 g++ driver.cpp input_prot.cpp -o oops_program
 
-to run it:
+*to run it:*
 ./oops_program
