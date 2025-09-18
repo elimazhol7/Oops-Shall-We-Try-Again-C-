@@ -1,4 +1,3 @@
-// input_prot.cpp
 #include <iostream>
 #include "input_prot.h"
 using namespace std;
