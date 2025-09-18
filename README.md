@@ -2,11 +2,8 @@
 *This program is a small input validation library I wrote in C++. Its main job is to make sure the user enters a valid number before the program continues.*
 
 >The project has three files:
-
 input_prot.h- the header file. It just declares the function so other files can use it.
- 
 input_prot.cpp- the source file where the function getInput is actually defined.
-
 driver.cpp- a simple test program that calls the function and shows how it works.
 
 *How the function works*
@@ -16,15 +13,10 @@ The function is called getInput. It takes four arguments: a prompt message, an e
 *Example*
 
 Enter number (0-100): hello
-
 Invalid! Try again:
-
 Enter number (0-100): 150
-
 Invalid! Try again:
-
 Enter number (0-100): 25
-
 Number entered: 25
 
 
