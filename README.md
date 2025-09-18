@@ -1,6 +1,6 @@
 # Oops Shall We Try Again C++ edition
 
-This lab is dedicated to practice input validation, arrays, C-string, and libraries.
+"This lab is dedicated to practice input validation, arrays, C-string, and libraries."
 
 This program is a small input validation library I wrote in C++. Its main job is to make sure the user enters a valid number before the program continues.
 
